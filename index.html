@@ -3,168 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apartment Description</title>
+    <title>Apartment Listing - Dream Space NYC</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            color: #333; /* Default text color */
-            background-color: #f9f9f9; /* Light grey background for contrast */
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        h1, h2, h3 {
-            color: #002244; /* Dark Blue for headings */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #264653;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #264653;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        p, li {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
             margin-bottom: 10px;
         }
 
-        a {
-            color: #c8102e; /* Red for links */
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #ffffff; /* White background for content areas */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .header {
-            background-color: #002244; /* Dark Blue header background */
-            color: white; /* White text in the header */
-            padding: 10px;
-            text-align: center;
-            border-radius: 8px 8px 0 0;
-        }
-
-        .button {
-            display: inline-block;
-            background-color: #c8102e; /* Red button background */
+        .badge {
+            background-color: #e76f51;
             color: white;
-            padding: 10px 20px;
-            text-align: center;
+            padding: 5px 10px;
             border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 10px;
+            margin-right: 10px;
+            display: inline-block;
         }
 
-        .button:hover {
-            background-color: #a60d24; /* Darker red on hover */
-        }
-
-        .highlight {
-            color: #002244; /* Dark Blue for highlighting text */
-            font-weight: bold;
-        }
-
-        .price {
-            color: #c8102e; /* Red for price emphasis */
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .footer {
-            background-color: #002244; /* Dark Blue footer background */
-            color: white;
-            text-align: center;
-            padding: 10px;
-            border-radius: 0 0 8px 8px;
+        .video iframe {
+            width: 100%;
+            height: 350px;
+            border-radius: 10px;
+            border: none;
             margin-top: 20px;
         }
 
-        .info-box {
-            background-color: #e1e1e1; /* Light grey box background */
-            border-left: 4px solid #002244; /* Dark Blue left border */
-            padding: 10px;
-            margin: 20px 0;
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #e76f51;
+            color: white;
+            border: none;
             border-radius: 5px;
+            font-size: 1.2em;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
         }
 
-        .info-box p {
-            margin: 0;
+        .btn:hover {
+            background-color: #f4a261;
         }
 
-        hr {
-            border: 0;
-            height: 1px;
-            background: #ccc;
-            margin: 20px 0;
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #264653;
+            color: white;
+            margin-top: 40px;
+            border-radius: 10px;
         }
 
-        iframe {
-            display: block;
-            margin: 20px auto;
-            border: 2px solid #002244; /* Dark Blue border around the video */
-            border-radius: 5px;
+        .map {
+            margin-top: 20px;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .testimonial {
+            background-color: #f4f1de;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial .quote {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .testimonial .author {
+            font-size: 1em;
+            color: #6a6a6a;
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                font-size: 1.5em;
+                padding: 20px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 15px;
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .testimonial .quote, .testimonial .author {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
 <body>
+    <header>Find Your Dream Apartment</header>
     <div class="container">
-        <div class="header">
-            <h1>Apartment Description</h1>
+        <h2>Apartment Details</h2>
+        <ul>
+            <li><span class="badge">Rent:</span> $1600/month (including utilities)</li>
+            <li><span class="badge">Bedrooms:</span> 2</li>
+            <li><span class="badge">Bathrooms:</span> 2</li>
+            <li><span class="badge">Size:</span> 1,200 sqft</li>
+        </ul>
+
+        <h2>Description</h2>
+        <p>This cozy 2-bedroom, 2-bathroom apartment is located in the heart of Prospect Lefferts Gardens, Brooklyn, NYC. The unit features a spacious living area with wide plank white oak flooring, a private terrace, and modern solar window treatments in the living room. The apartment is equipped with a Butterfly virtual doorman system, in-unit washer and dryer, and blackout shades in the bedrooms. With plenty of closet space, central heating, and air conditioning, this apartment provides a comfortable and modern living experience.</p>
+
+        <h2>Amenities</h2>
+        <ul>
+            <li>Modern kitchen with stainless steel appliances</li>
+            <li>Quartz countertops and European cabinetry</li>
+            <li>Washer and dryer in unit</li>
+            <li>Private balcony with city views</li>
+            <li>Pet-friendly building</li>
+            <li>Furnished roof terrace with grill</li>
+            <li>Secure bike room</li>
+            <li>Proximity to Prospect Park</li>
+            <li>Convenient transportation access</li>
+        </ul>
+
+        <h2>Video Tour</h2>
+        <div class="video">
+            <iframe src="https://drive.google.com/file/d/1aBug2P0dgu7viBPe-Z9-4x8SCN6FjsqQ/preview" allow="autoplay"></iframe>
         </div>
 
-        <p>A cozy <span class="highlight">2-bedroom, 2-bathroom</span> apartment is available for rent in Prospect Lefferts Gardens, Brooklyn, NYC. This unit offers an excellent living experience with all utilities included and modern amenities.</p>
-
-        <h2>2-Bedroom, 2-Bathroom Apartment at 195 Clarkson Avenue, Unit PHD, Brooklyn, NYC</h2>
-
-        <p class="price"><strong>Price:$1600</strong> /month (including utilities)</p>
-
-        <div class="description">
-            <h2>Description:</h2>
-            <p>This 2-bedroom, 2-bathroom apartment offers a spacious layout with a private terrace. The apartment is equipped with a Butterfly virtual doorman system, in-unit washer and dryer, and modern solar window treatments in the living room.</p>
-            <p>The apartment features wide plank white oak flooring, blackout shades in the bedrooms, and plenty of closet space. Central heating and air conditioning provide year-round comfort.</p>
+        <h2>Location</h2>
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.9356953480975!2d-73.95015138459203!3d40.661020279337315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25b031d5245bf%3A0x3e8897b5a5a3b6e5!2sProspect%20Lefferts%20Gardens%2C%20Brooklyn%2C%20NY!5e0!3m2!1sen!2sus!4v1632547838247!5m2!1sen!2sus"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
-        <div class="details">
-            <h2>Kitchen Details:</h2>
-            <p><strong>Stainless Steel Appliances:</strong> Includes a dishwasher, microwave, and refrigerator.</p>
-            <p><strong>Quartz Countertops:</strong> Durable and stylish surfaces for your culinary needs.</p>
-            <p><strong>European Cabinetry:</strong> Elegant and functional storage solutions.</p>
-            <p><strong>Signature Fixtures:</strong> Modern and sleek fixtures throughout the kitchen.</p>
-        </div>
+        <h2>Move-In Costs</h2>
+        <ul>
+            <li><span class="badge">First Month's Rent:$1600</span> </li>
+            <li><span class="badge">Security Deposit:$1100</span> </li>
+            <li><span class="badge">Application Fee:$135</span> </li>
+            <li><strong>Total Move-In Cost:$2835</strong>  (including utilities)</li>
+        </ul>
 
-        <div class="details">
-            <h2>Building Amenities:</h2>
-            <p><strong>Furnished Roof Terrace:</strong> Complete with a grill and refrigeration.</p>
-            <p><strong>Bike Room:</strong> Secure storage for your bicycles.</p>
-            <p><strong>Proximity to Prospect Park:</strong> Just three blocks away, perfect for outdoor activities.</p>
-            <p><strong>Convenient Transportation:</strong> Accessible via B, Q, 2, 5, and S subways.</p>
-        </div>
+        <a href="https://www.dreamspacenyc.info/apply-for-this-nycunit" class="btn">Schedule a Tour</a>
 
-        <!-- Embedded Video -->
-        <iframe src="https://drive.google.com/file/d/1aBug2P0dgu7viBPe-Z9-4x8SCN6FjsqQ/preview" 
-                width="300" height="300" allow="autoplay"></iframe>
-
-        <div class="footer">
-            <h2>Move-In Ready:</h2>
-            <p>This apartment is move-in ready, providing a smooth transition to your new home in Prospect Lefferts Gardens.</p>
-
-            <h2>Total Move-In Cost:</h2>
-            <p><strong>First Month's Rent:$1600</strong> </p>
-            <p><strong>Security Deposit:$1100</strong>  </p>
-            <p><strong>Application Fee:$135</strong> </p>
-            <p class="price"><strong>Total Move-In Cost:$2835</strong>  (including utilities)</p>
-
-            <h2>Application Process:</h2>
-            <p>To proceed, complete the <a href="https://Applications.Dreamspacenyc.Info"
-                                            >RENTER'S QUESTIONNAIRE</a></p>
-
-            <h2>Safety and Compliance:</h2>
-            <p>The application process adheres to NYC housing protection laws to ensure safety and transparency:</p>
-            <p><strong>NYC Admin Code §20-700:</strong> Prohibits deceptive trade practices and protects renters from fraud.</p>
-            <p><strong>NYC Admin Code §26-702:</strong> Ensures transparent and honest rental transactions.</p>
-            <p><strong>NYC Admin Code §26-521:</strong> Protects against unlawful rent increases and provides clear rental agreement guidelines.</p>
+        <h2>Testimonials</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <div class="quote">"I was amazed by how quickly and efficiently Dream Space NYC handled my application. The apartment is perfect, and the rent is very affordable. Highly recommend!"</div>
+                <div class="author">– Emily R., Current Renter</div>
+            </div>
+            <div class="testimonial">
+                <div class="quote">"The team at Dream Space NYC is incredibly responsive and made the entire process seamless. I couldn't be happier with my new apartment!"</div>
+                <div class="author">– David L., Current Renter</div>
+            </div>
+            <div class="testimonial">
+                <div class="quote">"Dream Space NYC offers an unbeatable combination of quality, efficiency, and affordability. I love my new home!"</div>
+                <div class="author">– Sarah K., Current Renter</div>
+            </div>
         </div>
     </div>
+
+    <div class="footer">&copy; 2023 Dream Apartments. All rights reserved.</div>
 </body>
-</html>
